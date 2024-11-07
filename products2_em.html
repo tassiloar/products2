@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Products Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Product List (Embedded JSON)</h1>
+<div id="productDisplay"></div>
+
+<script>
+    // Embedded JSON data
+    const products = [
+        {
+            "name": "Vintage T-shirt",
+            "description": "Tie-dye Grateful Dead T-shirt",
+            "price": 35,
+            "categories": ["clothing", "vintage"]
+        },
+        {
+            "name": "Running Shoes",
+            "description": "Lightweight and durable running shoes",
+            "price": 60,
+            "categories": ["footwear", "sport"]
+        },
+        {
+            "name": "Coffee Mug",
+            "description": "Handcrafted ceramic coffee mug",
+            "price": 15,
+            "categories": ["kitchen"]
+        },
+        {
+            "name": "Bluetooth Speaker",
+            "description": "Portable and waterproof Bluetooth speaker",
+            "price": 45,
+            "categories": ["electronics"]
+        },
+        {
+            "name": "Wool Scarf",
+            "description": "Warm and soft wool scarf",
+            "price": 20,
+            "categories": ["clothing"]
+        },
+        {
+            "name": "Cookware Set",
+            "description": "10-piece stainless steel cookware set",
+            "price": 120,
+            "categories": ["kitchen", "home"]
+        },
+        {
+            "name": "Leather Wallet",
+            "description": "Genuine leather wallet with RFID protection",
+            "price": 40,
+            "categories": ["accessories", "fashion"]
+        },
+        {
+            "name": "Wireless Earbuds",
+            "description": "Noise-canceling wireless earbuds",
+            "price": 55,
+            "categories": ["electronics"]
+        }
+    ];
+
+    // Display the products
+    let displayHTML = '';
+    products.forEach(product => {
+        displayHTML += `
+            <div class="product">
+                <h2>${product.name}</h2>
+                <p>${product.description}</p>
+                <p class="price">Price: $${product.price}</p>
+                <p class="categories">Categories: ${product.categories.join(', ')}</p>
+            </div>
+        `;
+    });
+
+    // Insert the HTML into the div
+    document.getElementById('productDisplay').innerHTML = displayHTML;
+</script>
+
+</body>
+</html>
